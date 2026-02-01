@@ -41,8 +41,8 @@ export function useUpbitWebSocket(symbols: string[] = ['BTC']) {
     // 심볼이 비어있으면 기본값으로 BTC 사용
     const symbolsToUse = symbols.length > 0 ? symbols : ['BTC'];
 
-    // socket.current = new WebSocket('wss://api.upbit.com/websocket/v1');
-    socket.current = new WebSocket('wss://api.playcono.com/ws/'); // 프록시 사용
+    socket.current = new WebSocket('wss://api.upbit.com/websocket/v1');
+    // socket.current = new WebSocket('wss://api.playcono.com/ws/'); // 프록시 사용
 
     socket.current.onopen = function () {
       setIsConnected(true);

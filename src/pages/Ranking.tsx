@@ -156,12 +156,14 @@ export default function Ranking() {
           <div className="flex flex-col items-center">
             <div className="relative">
               <LazyLoadImage
-                src={optimizeImageUrl(topUsers[1]?.profileImageUrl)}
-                alt={topUsers[1]?.nickname}
+                src={optimizeImageUrl(topUsers[1]?.profileImageUrl || PLACEHOLDER)}
+                alt={topUsers[1]?.nickname || 'User'}
                 className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
                 onError={(e: any) => {
-                  (e.target as HTMLImageElement).src = PLACEHOLDER;
+                  (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
                 }}
+                placeholderSrc={PLACEHOLDER}
+                effect="blur"
               />
               <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-zinc-200 rounded-full flex items-center justify-center text-lg font-bold">
                 2
@@ -193,12 +195,14 @@ export default function Ranking() {
           <div className="flex flex-col items-center -mt-4 ">
             <div className="relative">
               <LazyLoadImage
-                src={optimizeImageUrl(topUsers[0].profileImageUrl)}
-                alt={topUsers[0]?.nickname}
+                src={optimizeImageUrl(topUsers[0]?.profileImageUrl || PLACEHOLDER)}
+                alt={topUsers[0]?.nickname || 'User'}
                 className="w-20 h-20 rounded-full border-2 border-yellow-400 object-cover"
                 onError={(e: any) => {
-                  (e.target as HTMLImageElement).src = PLACEHOLDER;
+                  (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
                 }}
+                placeholderSrc={PLACEHOLDER}
+                effect="blur"
               />
               <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-lg font-bold">
                 1
@@ -230,12 +234,14 @@ export default function Ranking() {
           <div className="flex flex-col items-center">
             <div className="relative">
               <LazyLoadImage
-                src={optimizeImageUrl(topUsers[2].profileImageUrl)}
-                alt={topUsers[2]?.nickname}
+                src={optimizeImageUrl(topUsers[2]?.profileImageUrl || PLACEHOLDER)}
+                alt={topUsers[2]?.nickname || 'User'}
                 className="w-16 h-16 rounded-full border-2 border-orange-400 object-cover"
                 onError={(e: any) => {
-                  (e.target as HTMLImageElement).src = PLACEHOLDER;
+                  (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
                 }}
+                placeholderSrc={PLACEHOLDER}
+                effect="blur"
               />
               <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center text-lg font-bold">
                 3
